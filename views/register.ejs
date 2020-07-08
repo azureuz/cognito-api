@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+Registration page
+
+</head>
+
+<body>
+    <form action="http://localhost:8000/register/" method="post">
+        
+            <h1><center>Registration</h1>
+          <p> </p>
+          <hr>
+      
+          <label for="Username"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="Username" required>
+      
+          <label for="Password"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="Password" required>
+          <button type="submit" class="registerbtn">Register</button>
+    
+      </form>    
+      
+      <br>
+      <ul>
+            <li>Password should contain both uppercase and lowercase letters </li>
+            <li>Password size should be atleast 8 characters</li>
+            <li>Password should contain atleast 1 special character</li>
+            <li>Password should contain atleast 1 numeric character</li>
+          </ul> 
+</body>
+</html>
