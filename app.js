@@ -19,6 +19,11 @@ const poolData = {
 const pool_region = 'us-east-2';
 const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
+app.get('/', async function (req, res) { 
+    res.send('<h1>Welcome to node app</h1>');
+  
+  });
+
 app.get('/register', async function (req, res) { 
     res.render('register');
   
