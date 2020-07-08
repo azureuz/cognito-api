@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 const poolData = {    
     UserPoolId : "us-east-2_ZFV3XwCNW",    
     ClientId : "1qnbbio87jsgfbfumusiig3drr" 
-    }; 
+    }; //cognito credentials
 
 const pool_region = 'us-east-2';
 const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
@@ -22,7 +22,7 @@ const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 app.get('/', async function (req, res) { 
     res.send('<h1>Welcome to node app</h1><body>/register <br>    /login   <br>  /dashboard</body>');
   
-  });
+  }); //home page default
 
 app.get('/register', async function (req, res) { 
     res.render('register');
@@ -58,7 +58,7 @@ app.post('/register',  async function (req, res) {
         res.send(data.user);
     } );
 
-  });
+  }); //read post request and create identity for users. Pass into userpool for registration. 
 
 
 app.post('/login', async function(req,res){
@@ -89,7 +89,7 @@ app.post('/login', async function(req,res){
         }
     });
 
-});
+}); //read request for credentials. Pass into userpool check if correct. On success redirect to /dashboard else redirect back to /login.
 
 app.post('/getNginxLogs', async function(req,res){
     const logPath = path.resolve(__dirname, '..','..','..','..','var','log','nginx','access.log');
@@ -97,7 +97,7 @@ app.post('/getNginxLogs', async function(req,res){
     console.log(logFile);
     res.send(logFile.toString().split(/\n/));
 
-});
+}); //resolve path to access.logs for nginx located at var/log/nginx. Use file system to read logs. Convert to readable format. Resolve. 
 
 
 var port = 8000;
