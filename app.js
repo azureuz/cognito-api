@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
 const poolData = {    
-    UserPoolId : "us-east-2_ZFV3XwCNW",    
-    ClientId : "1qnbbio87jsgfbfumusiig3drr" 
+    UserPoolId : "",    
+    ClientId : "" 
     }; //cognito credentials
 
 const pool_region = 'us-east-2';
